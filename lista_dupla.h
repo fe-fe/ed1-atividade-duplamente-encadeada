@@ -29,7 +29,9 @@ int remover_no(ListaDupla *lista, int dado);
 
 // Visualização
 
-void listar_nos(ListaDupla *lista);
+void exibirFrente(ListaDupla *lista);
+
+void exibirTras(ListaDupla *lista);
 
 No *buscar_no(ListaDupla *lista, int dado);
 
