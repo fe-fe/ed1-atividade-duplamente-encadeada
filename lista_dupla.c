@@ -52,6 +52,7 @@ void adicionar_no(ListaDupla *lista, int dado) {
         novo_no->proximo = lista->primeiro;
         lista->ultimo->proximo = novo_no;
         lista->ultimo = novo_no;
+        lista->primeiro->anterior = novo_no;
     }
 
     lista->tamanho++;
@@ -107,7 +108,8 @@ No *buscar_no(ListaDupla *lista, int dado) {
 }
 
 
-void listar_nos(ListaDupla *lista) {
+void exibirFrente(ListaDupla *lista) {
+    printf("listando nos na ordem reversa: \n");
     if (!lista || lista->tamanho == 0) return;
 
     No *no = lista->primeiro;
@@ -117,4 +119,17 @@ void listar_nos(ListaDupla *lista) {
         no = no->proximo;
         i++;
     } while (no != lista->primeiro);
+}
+
+void exibirTras(ListaDupla *lista) {
+    printf("listando nos na ordem reversa: \n");
+    if (!lista || lista->tamanho == 0) return;
+
+    No *no = lista->ultimo;
+    int i = lista->tamanho;
+    do {
+        printf("[no %d] dado: %d\n", i, no->dado);
+        no = no->anterior;
+        i--;
+    } while (no != lista->ultimo);
 }
