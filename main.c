@@ -11,7 +11,7 @@ int main() {
     adicionar_no(lista, 8);
     adicionar_no(lista, 1);
 
-    listar_nos(lista);
+    exibirFrente(lista);
 
     getchar();
 
@@ -21,7 +21,7 @@ int main() {
 
     adicionar_no(lista, 2);
 
-    listar_nos(lista);
+    exibirTras(lista);
     getchar();
 
     liberar_ListaDupla(lista);
